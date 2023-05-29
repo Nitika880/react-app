@@ -1,0 +1,26 @@
+version: '3'
+services:
+  testreact:
+    image: node
+    ports:
+      - 3000:3000
+    environment:
+      - USERNAME=GHDAJKSDF
+      - PASSWORD=SDJHFJSDH
+      - DB_PASSWORD=JAEDGJWGES
+    volumes:
+    - react-data: /data/db
+  postgres-container:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - DB_USERNAME=rishabh
+      - DB_PWD=root1234
+    volumes:
+    - postgres-data: path/sjdgjs
+volumes:
+  react-data:
+    driver: local
+  postgres-data:
+    driver: local
